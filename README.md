@@ -130,8 +130,7 @@ uv run python 01_junction_coverage_tumor_specificity.py \
   --control_samples control1 control2 control3 \
   --output_dir ./output \
   --fold_change 10 \
-  --max_normal_sum 5 \
-  --min_tumor_sum 5
+  --max_normal_sum 5
 ```
 
 2. Provide `.txt` files containing sample names:
@@ -144,8 +143,7 @@ uv run python 01_junction_coverage_tumor_specificity.py \
   --control_samples example/control_samples.txt \
   --output_dir ./output \
   --fold_change 10 \
-  --max_normal_sum 5 \
-  --min_tumor_sum 5
+  --max_normal_sum 5
 ```
 
 For a real cohort, the same command pattern looks like this after you replace the placeholders:
@@ -168,8 +166,7 @@ Inputs:
 | `--tumor_samples` | `example/tumor_samples.txt` | Tumor sample names and/or existing `.txt` files containing sample names. | 
 | `--control_samples` | `example/control_samples.txt` | Control sample names and/or existing `.txt` files containing sample names. |
 | `--fold_change` | `10` | Multiplier used in `mean_tumor > fold_change * mean_normal`. |
-| `--max_normal_sum` | `5` | Maximum allowed total novel splice junction coverage in controls. |
-| `--min_tumor_sum` | `5` | Minimum required total novel splice junction coverage in tumors. |  
+| `--max_normal_sum` | `5` | Maximum allowed novel splice junction coverage in each control sample. |
 
 Notes for the input format:
 
@@ -185,6 +182,13 @@ Notes for the input format:
 - The script enforces a strict match between requested samples and `*.SJ.out.tab` files:
   - file count must equal requested sample count;
   - sample-name set must match exactly (no missing and no extra files).
+
+The two threshold arguments above are applied together. A junction is kept only if both conditions below are true:
+
+```text
+mean_tumor > fold_change * mean_normal
+AND every_control_sample_reads < max_normal_sum
+```
 
 Outputs written to `--output_dir`:
 
@@ -336,7 +340,7 @@ The Step 3 output file is tab-delimited. These columns are the ones you will usu
 | `cds_flag` | Encoded CDS-covered segments in `id:start-end;` form. |
 | `junc_flag_for_acid` | Junction-aware flag positions in amino-acid space. |
 
-
+<a id="04-pvactools"></a>
 
 ### `04_pvactools.py`
 

@@ -119,7 +119,6 @@ def tumor_specific_junctions(
     output_path,
     fold_change=10,
     max_normal_sum=5,
-    min_tumor_sum=5,
 ):
     tumor_specific = []
 
@@ -129,8 +128,6 @@ def tumor_specific_junctions(
             junction[control_samples], errors="coerce"
         ).fillna(0.0)
 
-        tumor_sum = float(tumor_values.sum())
-        normal_sum = float(control_values.sum())
         mean_tumor = round(float(tumor_values.mean()), 2)
         mean_normal = round(float(control_values.mean()), 2)
         median_tumor = float(tumor_values.median())
@@ -140,8 +137,7 @@ def tumor_specific_junctions(
 
         if (
             (mean_tumor > fold_change * mean_normal)
-            and (normal_sum < max_normal_sum)
-            and (tumor_sum > min_tumor_sum)
+            and (control_values < max_normal_sum).all()
         ):
             tumor_specific.append(
                 {
@@ -314,13 +310,7 @@ if __name__ == "__main__":
         "--max_normal_sum",
         type=float,
         default=5,
-        help="Max allowed total normal coverage",
-    )
-    parser.add_argument(
-        "--min_tumor_sum",
-        type=float,
-        default=5,
-        help="Min required total tumor coverage",
+        help="Max allowed normal coverage in each control sample",
     )
     args = parser.parse_args()
 
@@ -352,5 +342,4 @@ if __name__ == "__main__":
         specific_output,
         fold_change=args.fold_change,
         max_normal_sum=args.max_normal_sum,
-        min_tumor_sum=args.min_tumor_sum,
     )
