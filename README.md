@@ -186,14 +186,6 @@ Notes for the input format:
   - file count must equal requested sample count;
   - sample-name set must match exactly (no missing and no extra files).
 
-The three threshold arguments above are applied together. A junction is kept only if all three conditions below are true:
-
-```text
-mean_tumor > fold_change * mean_normal
-AND total_normal_reads < max_normal_sum
-AND total_tumor_reads  > min_tumor_sum
-```
-
 Outputs written to `--output_dir`:
 
 | File | Meaning |
