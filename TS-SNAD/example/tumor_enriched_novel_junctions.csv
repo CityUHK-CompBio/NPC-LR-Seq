@@ -1,0 +1,10 @@
+isoform	junction_num	mean_tumor	mean_normal	median_tumor	median_normal	max_tumor	max_normal
+TCONS_00004455	junction_1	3.0	0.0	3.5	0.0	5.0	0.0
+TCONS_00004455	junction_2	4.75	1.33	4.0	0.0	9.0	4.0
+TCONS_00004455	junction_6	28.75	0.0	28.0	0.0	55.0	0.0
+TCONS_00004146	junction_11	22.0	0.0	15.5	0.0	56.0	0.0
+TCONS_00004601	junction_1	4.0	0.0	1.5	0.0	13.0	0.0
+TCONS_00004601	junction_2	29.5	1.0	6.5	1.0	105.0	2.0
+TCONS_00004000	junction_3	24.75	1.33	21.5	1.0	54.0	3.0
+TCONS_00004000	junction_4	4.5	0.0	3.5	0.0	10.0	0.0
+TCONS_00007386	junction_9	91.5	0.0	30.0	0.0	306.0	0.0
