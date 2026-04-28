@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong><code>TS-SNAD</code></strong><br>
-  Tumor-Specific Splicing NeoAntigen Detection
+  Tumor-Specific splicing neoAntigen detection
 </p>
 
 <p align="center">
