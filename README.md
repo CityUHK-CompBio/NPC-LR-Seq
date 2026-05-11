@@ -165,8 +165,8 @@ Inputs:
 | `--sj_path` | `example/SJ.out.tab` | Directory containing one STAR `*.SJ.out.tab` file per sample. |
 | `--tumor_samples` | `example/tumor_samples.txt` | Tumor sample names and/or existing `.txt` files containing sample names. | 
 | `--control_samples` | `example/control_samples.txt` | Control sample names and/or existing `.txt` files containing sample names. |
-| `--fold_change` | `10` | Multiplier used in `mean_tumor > fold_change * mean_normal`. |
-| `--max_normal_sum` | `5` | Maximum allowed novel splice junction coverage in each control sample. |
+| `--fold_change` | `10` | Multiplier used in `mean_tumor_cpm > fold_change * mean_normal_cpm`. CPM is computed per sample from the full STAR `SJ.out.tab` read total. |
+| `--max_normal_sum` | `5` | Maximum allowed raw novel splice junction coverage in each control sample. |
 
 Notes for the input format:
 
@@ -186,7 +186,7 @@ Notes for the input format:
 The two threshold arguments above are applied together. A junction is kept only if both conditions below are true:
 
 ```text
-mean_tumor > fold_change * mean_normal
+mean_tumor_cpm > fold_change * mean_normal_cpm
 AND every_control_sample_reads < max_normal_sum
 ```
 
@@ -194,7 +194,7 @@ Outputs written to `--output_dir`:
 
 | File | Meaning |
 | --- | --- |
-| `novel_junctions_matrix.csv` | Novel splice junction coverage matrix with one row per junction and one column per sample. This file is standard comma-delimited CSV. |
+| `novel_junctions_matrix.csv` | Novel splice junction coverage matrix with one row per junction, raw per-sample coverage columns, and matching `<sample>_cpm` columns. This file is standard comma-delimited CSV. |
 | `tumor_specific_novel_junctions.csv` | Tumor-specific novel splice junctions. This file is tab-delimited even though the extension is `.csv`. |
 
 With the example command above, the script writes:
