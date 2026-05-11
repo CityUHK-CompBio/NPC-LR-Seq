@@ -1,0 +1,4 @@
+isoform	junction_num	mean_tumor	mean_normal	max_tumor	max_normal	mean_tumor_cpm	mean_normal_cpm	max_tumor_cpm	max_normal_cpm
+TCONS_00031582	junction_6	2.75	0.0	7.0	0.0	0.22	0.0	0.47	0.0
+TCONS_00031582	junction_11	18.75	0.0	31.0	0.0	1.25	0.0	2.42	0.0
+TCONS_00033499	junction_12	28.5	0.0	106.0	0.0	2.76	0.0	10.68	0.0

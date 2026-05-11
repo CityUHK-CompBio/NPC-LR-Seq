@@ -1,0 +1,2 @@
+Mutation	HLA Allele	Sub-peptide Position	Epitope Seq	Median IC50 Score	Best IC50 Score	Best IC50 Score Method	Median Percentile	Best Percentile	Best Percentile Method	NetMHCpan IC50 Score	NetMHCpan Percentile	cterm_7mer_gravy_score	max_7mer_gravy_score	difficult_n_terminal_residue	c_terminal_cysteine	c_terminal_proline	cysteine_count	n_terminal_asparagine	asparagine_proline_bond_count
+peptide_14	HLA-A*33:03	1	HLFQGVPCR	80.26	80.26	NetMHCpan	0.28	0.28	NetMHCpan	80.26	0.28	-0.07142857142857142	1.1142857142857143	False	False	False	1	False	0

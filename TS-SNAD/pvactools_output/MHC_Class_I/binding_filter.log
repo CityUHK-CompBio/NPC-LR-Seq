@@ -1,0 +1,2 @@
+/storage2/shuai_yi/neoantigen/40_TS_SNAD/NPC-LR-Seq/TS-SNAD/.venv/lib/python3.10/site-packages/pvactools/lib/pipeline.py:7: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources

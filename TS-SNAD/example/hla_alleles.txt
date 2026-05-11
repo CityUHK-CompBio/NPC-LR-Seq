@@ -1,0 +1,16 @@
+# Example HLA-I alleles for 04_pvactools.py
+# One allele per line. Blank lines and lines starting with "#" are ignored.
+# Replace these with the HLA alleles from your own sample before a real run.
+
+HLA-B*40:01
+HLA-A*02:01
+HLA-C*03:04
+HLA-A*02:03
+HLA-A*11:01
+HLA-A*02:07
+HLA-B*46:01
+HLA-C*01:02
+HLA-A*24:02
+HLA-B*40:01
+HLA-C*03:04
+HLA-A*33:03

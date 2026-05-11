@@ -1,0 +1,14 @@
+[project]
+name = "TS-SAND"
+version = "0.1.0"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "pandas",
+    "numpy",
+    "pyranges",
+    "biopython",
+    "black",
+    "pathos",
+    "pvactools",
+    "setuptools<81",
+]

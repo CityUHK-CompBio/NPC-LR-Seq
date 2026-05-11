@@ -1,0 +1,7 @@
+IEDB API Output doesn't match input. Retrying.
+2026-04-28 16:39:46.583182
+Inputs:
+{'sequence_text': '>1\nQMPSSTGTY\n>2\nMPSSTGTYS\n>3\nPSSTGTYSR\n>4\nSSTGTYSRG\n>5\nSTGTYSRGL\n>6\nTGTYSRGLK\n>7\nGTYSRGLKP\n>8\nTYSRGLKPL\n>9\nYSRGLKPLQ\n>10\nPSKSHLFQG\n>11\nSKSHLFQGV\n>12\nKSHLFQGVP\n>13\nSHLFQGVPC\n>14\nHLFQGVPCR\n>15\nLFQGVPCRI\n>16\nFQGVPCRIR\n>17\nQGVPCRIRG\n', 'method': 'netmhcpan', 'allele': 'HLA-A*02:03', 'length': 9, 'user_tool': 'pVac-seq'}
+Output:
+allele	seq_num	start	end	length	peptide	core	icore	ic50	percentile_rank
+
